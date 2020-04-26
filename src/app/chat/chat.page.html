@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-title class="center">Chat</ion-title>
+    <ion-icon name="arrow-back-outline" class="back"(click)="goBack()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item class="sender">
+    <ion-input placeholder="Type something" class="sendInput"></ion-input>
+  </ion-item>
 </ion-content>

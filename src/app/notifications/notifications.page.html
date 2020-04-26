@@ -1,11 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notifications</ion-title>
+    <ion-title class="center">Notifications</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div *ngFor="let notification of [1,2,3,4,5]">
+      <app-notification></app-notification>
+  </div>
 </ion-content>
 
 <app-navbar></app-navbar>

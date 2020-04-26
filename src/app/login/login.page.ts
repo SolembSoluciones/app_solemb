@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import Parse from 'parse';
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,10 @@ export class LoginPage {
   // username:string;
   // password:string;
 
-  constructor(private router:Router) {
+  constructor(
+    private router:Router,
+    public loadingController: LoadingController
+  ) {
     // this.parseInitialize();
   }
 
@@ -36,7 +41,10 @@ export class LoginPage {
   }
 
   async onLogin(){
-    this.router.navigateByUrl('home');
+    this.presentLoading()
+    .then(()=>{
+      this.router.navigateByUrl('home');
+    });
     // Parse.User.logIn(this.username, this.password)
     // .then(() => {
     //     this.router.navigateByUrl('home');
@@ -44,6 +52,32 @@ export class LoginPage {
     // .catch(error => {
     //   alert(error);
     // });
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Please wait...',
+      duration: 2000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
+  async presentLoadingWithOptions() {
+    const loading = await this.loadingController.create({
+      spinner: null,
+      duration: 5000,
+      message: 'Click the backdrop to dismiss early...',
+      translucent: true,
+      cssClass: 'custom-class custom-loading',
+      backdropDismiss: true
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed with role:', role);
   }
 
 }

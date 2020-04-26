@@ -8,6 +8,7 @@ import { NotificationsPageRoutingModule } from './notifications-routing.module';
 
 import { NotificationsPage } from './notifications.page';
 import { ComponentsModule } from '../shared/components/components.module';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ComponentsModule } from '../shared/components/components.module';
   ],
   declarations: [
     NotificationsPage,
+    NotificationComponent
   ]
 })
 export class NotificationsPageModule {}
