@@ -1,20 +1,87 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label>Reservar</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="paper-plane" slot="start"></ion-icon>
+        <ion-label>Reportar</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" slot="start"></ion-icon>
+        <ion-label>Acceso</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="settings" slot="start"></ion-icon>
+        <ion-label>Ajustes</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="card" slot="start"></ion-icon>
+        <ion-label>Pagos</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="information-circle" slot="start"></ion-icon>
+        <ion-label>Ayuda</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label (click)="onLogout()">Salir</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div class="ion-page" id="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="center">My access</ion-title>
+      <ion-button color="light" shape="round" size="medium" (click)="onChat()" style="float:right; margin: -4% 0 2% 4%;">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+      </ion-button>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-content class="ion-padding">
+    <ion-grid class="center v-center" style="height: 100%;">
+      <ion-row>
+        <ion-col size="12">
+          Logo
+        </ion-col>
+      </ion-row>
+      <ion-row style="height: 25%; margin-top:30%;">
+        <ion-col size="6">
+          <ion-img src="assets/images/car.jpg"></ion-img>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" size="large" color="success" (click)="openingDoor()">Open</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row style="height: 25%;">
+        <ion-col size="6">
+            <ion-img src="assets/images/person.png"></ion-img>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" size="large" color="success" (click)="openingDoor()">Open</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+  <app-navbar></app-navbar>
+
+</div>
+
+
+
+
+  

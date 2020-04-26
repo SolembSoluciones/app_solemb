@@ -1,5 +1,7 @@
 {
   "name": "myaccess",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
