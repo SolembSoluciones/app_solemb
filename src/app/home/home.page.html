@@ -27,7 +27,11 @@
         <ion-label>Pagos</ion-label>
       </ion-item>
       <ion-item>
-          <ion-icon name="information-circle" slot="start"></ion-icon>
+        <ion-icon name="information-circle" slot="start"></ion-icon>
+        <ion-label (click)="showListDevices()">Ver lista de dispositivos </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="information-circle" slot="start"></ion-icon>
         <ion-label>Ayuda</ion-label>
       </ion-item>
       <ion-item>
@@ -44,7 +48,7 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title class="center">My access</ion-title>
+      <ion-title class="center"></ion-title>
       <ion-button color="light" shape="round" size="medium" (click)="onChat()" style="float:right; margin: -4% 0 2% 4%;">
         <ion-icon name="chatbubbles-outline"></ion-icon>
       </ion-button>
@@ -55,23 +59,23 @@
     <ion-grid class="center v-center" style="height: 100%;">
       <ion-row>
         <ion-col size="12">
-          Logo
+          <img style="width: 50%;" src="assets/images/myacces_logo.PNG"/>
         </ion-col>
       </ion-row>
-      <ion-row style="height: 25%; margin-top:30%;">
+      <ion-row style="height: 25%; margin-top:20%;">
         <ion-col size="6">
-          <ion-img src="assets/images/car.jpg"></ion-img>
+          <ion-img src="assets/images/car.jpg" class="car"></ion-img>
         </ion-col>
         <ion-col size="6">
-          <ion-button shape="round" size="large" color="success" (click)="openingDoor()">Open</ion-button>
+          <ion-button class="open_button" id="carBtn" shape="round" size="large" color="success" (click)="carDoor()">Open</ion-button>
         </ion-col>
       </ion-row>
       <ion-row style="height: 25%;">
         <ion-col size="6">
-            <ion-img src="assets/images/person.png"></ion-img>
+            <ion-img src="assets/images/person.png" class="person"></ion-img>
         </ion-col>
         <ion-col size="6">
-          <ion-button shape="round" size="large" color="success" (click)="openingDoor()">Open</ion-button>
+          <ion-button class="open_button" id="personBtn" shape="round" size="large" color="success" (click)="personDoor()">Open</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -1,11 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-img class="profile_picture" src="assets/images/user.png" ></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1>Rodolfo Frías</h1>
+        <a href="">Edit profile</a>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item-group>
+          <ion-item-divider color="light">Some of you</ion-item-divider>
+          <ion-item>Your paintments</ion-item>
+          <ion-item>Your visitants</ion-item>
+          <ion-item>Favorites</ion-item>
+        </ion-item-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <app-navbar></app-navbar>

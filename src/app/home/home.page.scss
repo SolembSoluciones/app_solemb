@@ -6,3 +6,12 @@
 .v-center{
     vertical-align: middle;
 }
+
+.car, .person{
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.open_button{
+    margin-top: 30% !important;
+}

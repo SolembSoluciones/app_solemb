@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de dispositivos</ion-title>
+  </ion-toolbar>
+  <ion-button (click)="closeModal()">Salir</ion-button>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div *ngFor="let device of devices">
+      <p>{{device.name}}</p>
+      <p>{{device.id}}</p>
+      <ion-button color="light" shape="round" (click)="connectToDevice(device.address)">
+        Conectar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
